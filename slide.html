@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slides</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="slide">
+            <div class="pic">
+                <img src="./img/blog1.png" alt="">
+            </div>
+            <div class="details">
+                <h1 class="main__title left">
+                    Main Title
+                </h1>
+                <h3 class="sub__title">
+                    Subtitle
+                </h3>
+                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi neque ipsam pariatur.</p>
+            </div>
+            <div class="controls">
+                <div class="thumbnails" id="thumbs">
+                    <img src="img/blog1.png" alt="thumbnail" class="thumbnail">
+                    <img src="img/blog1.png" alt="thumbnail" class="thumbnail">
+                    <img src="img/blog1.png" alt="thumbnail" class="thumbnail">
+                    <img src="img/blog1.png" alt="thumbnail" class="thumbnail">
+                    <img src="img/blog1.png" alt="thumbnail" class="thumbnail">
+                </div>
+                <img class="arrow left" src="img/coffee1.png" alt="">
+                <img class="arrow" src="img/coffee2.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const galleryItem = {
+            image: "img/blog1.png",
+            title: "title",
+            subTitle: "location",
+            description: "This is to be field with some description and some more description"
+        }
+
+        const items = [
+            {
+                image: "img/blog1.png",
+                title: "Gujji Coffee",
+                subTitle: "South Oromia",
+                description: "This is to be field with some description and some more description"
+            },
+            {
+                image: "img/blog2.png",
+                title: "Sidamo Coffee",
+                subTitle: "Sidamma",
+                description: "This is to be field with some description and some more description"
+            },
+            {
+                image: "img/blog1.png",
+                title: "Welega Coffee",
+                subTitle: "West Oromia",
+                description: "This is to be field with some description and some more description"
+            },
+        ]
+        
+        const thumbs = document.getElementById("thumbs")
+        // alert(thumbs)
+
+        for(var i=0; i<10; i++){
+            
+            thumbs.innerHtml += `<img src=${galleryItem.image} alt='thumbnail' class='thumbnail'>`;
+            console.log(thumbs.innerHtml)
+        }
+    </script>
+</body>
+</html>

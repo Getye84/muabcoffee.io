@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Window</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .item {
+            border: 1px solid black;
+            margin: 5px;
+            width: 50%;
+            position: relative;
+            left: 150px;
+            transition: 1s;
+            background-color: red;
+            opacity: 0;
+            transform: rotateZ(10deg)
+        }
+
+        .item h1 {
+            position: relative;
+            opacity: 0;
+            transition: 1s;
+            top: -30px;
+        }
+
+        .item.inside {
+            left: 0;
+            opacity: 1;
+            transform: rotate(0);
+            background-color: yellow;
+        }
+
+        .item.inside h1 {
+            opacity: 1;
+            top: 0;
+        }
+
+        .div1 {
+            height: 50vh;
+        }
+
+        .div2 {
+            height: 20vh;
+        }
+
+        .div3 {
+            height: 70vh;
+        }
+
+        .div4 {
+            height: 30vh;
+        }
+
+        .div5 {
+            height: 10vh;
+        }
+
+        .div6 {
+            height: 50vh;
+        }
+
+        #parent {
+            margin: 200;
+            height: 100vh;
+            /* overflow: hidden; */
+            overflow: scroll;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent" class="container">
+        <div class="item div1" onload="hello()">
+            <h1>Title 0</h1>
+            <p>description 0</p>
+        </div>
+        <div class="item div2">
+            <h1>Title 1</h1>
+            <p>description 1</p>
+        </div>
+        <div class="item div3">
+            <h1>Title 2</h1>
+            <p>description 2</p>
+        </div>
+        <div class="item div4">
+            <h1>Title 3</h1>
+            <p>description 3</p>
+        </div>
+        <div class="item div5">
+            <h1>Title 4</h1>
+            <p>description 4</p>
+        </div>
+        <div class="item div6">
+            <h1>Title 5</h1>
+            <p>description 5</p>
+        </div>
+        <div class="item div1">
+            <h1>Title 6</h1>
+            <p>description 6</p>
+        </div>
+    </div>
+
+    <div class="margin" style="position: fixed; top: 0; height: 100px; width: 100%; border: 4px solid green;"></div>
+    <div class="margin" style="position: fixed; bottom: 0; height: 100px; width: 100%; border: 4px solid green;"></div>
+</body>
+
+
+<script>
+    const parent = document;
+    const items = document.querySelectorAll(".item");
+    //inside window
+    function insideWindow(token) {
+        let rect = parent.getBoundingClientRect();
+        let scrollY = parent.scrollTop;
+        // rect.height -= 200;
+        // rect.y = scrollY + 100;
+        for (let i = 0; i < items.length; i++) {
+            let item = items[i];
+            let tempRect = item.getBoundingClientRect()
+            // tempRect.y += scrollY;
+            if (
+                (tempRect.y + tempRect.height < rect.y) || (tempRect.y > rect.y + rect.height)
+            ) {
+                if (item.classList.contains(token)) {
+                    item.classList.remove(token)
+                }
+            } else {
+                if (!item.classList.contains(token)) {
+                    item.classList.add(token)
+                }
+            }
+        }
+    }
+
+    let inside = "inside"
+    parent.addEventListener("scroll", (event) => {
+        insideWindow(inside);
+    })
+
+    insideWindow(inside);
+</script>
+
+</html>

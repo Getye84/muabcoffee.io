@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUAB COFFEE</title>
+    <!--==========FAVICON============--->
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <!--==========BOXICONS============--->
+
+    <!--==========CSS============--->
+</head>
+
+<body>
+    <!--==========HEADER============--->
+    <div id="parent">
+        <div class="header" id="header">
+            <div class="nav">
+                <a href="#home" class="logo nav__link active">
+                    <img src="./coffee/logo.png" alt="logo">
+                    <!-- <div class="name">
+                        <span>MUAB</span>
+                        <span class="min">COFFEE</span>
+                    </div> -->
+                </a>
+                <ul class="nav__list" id="nav">
+
+                    <a href="#about" class="nav__link">
+                        <span>ABOUT us</span>
+                    </a>
+
+                    <a href="#products" class="nav__link selected">
+                        <span>PRODUCTS</span>
+                    </a>
+
+                    <a href="#team" class="nav__link">
+                        <span>Our Team</span>
+                    </a>
+
+                    <a href="./components/pictureflow.html" class="nav__link">
+                        <span>Gallery</span>
+                    </a>
+
+                    <a href="#contact" class="nav__link">
+                        <span>CONTACT</span>
+                    </a>
+                </ul>
+                <ul class="toggles">
+                    <a href="#" class="nav__buttons night__toggle" id="navToggle">
+                        <svg fill="#eeeeff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section pager home" index="0" id="home">
+            <div class="pages">
+                <div class="page overlay" style="--bg:url('../imgs/covers/home.jpg')">
+                    <div class="hero">
+                        <h1 class="title" style="--clr:#c5f">MUAB COFFEE</h1>
+                        <h3 class="subtitle">The Ethiopian Coffee Standard. </h3>
+                        <p class="text">
+                            Ever since the first shepherd to test coffee, Ethiopia is regarded as both the origin and standard for Arabica coffee and MUAB Coffee is here representing the standard.
+                        </p>
+                        <a href="#about" class="button" style="--clr:#c5f">
+                            <b></b> <span>LEARN MORE </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="page overlay" style="--bg:url('../imgs/covers/products.jpg')">
+                    <div class="hero">
+                        <h1 class="title" style="--clr:#0fe">What Do We Offer?</h1>
+                        <h3 class="subtitle">People considered these factors on coffee</h3>
+                        <p class="text">
+                            Source, Organic, Processing, Cherry sorting...
+                        </p>
+                        <a href="#about" class="button" style="--clr:#0fe">
+                            <b></b> <span>LEARN MORE </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="page overlay" style="--bg:url('../imgs/covers/staff.jpg')">
+                    <div class="hero">
+                        <h1 class="title" style="--clr:#fa0">Meet Our Staff</h1>
+                        <h3 class="subtitle">Let us introduce our synergetic Team </h3>
+                        <p class="text">
+                            Take a peek of our stuff members with full of expertise and commitment. 
+                        </p>
+                        <a href="#team" class="button" style="--clr:#fa0">
+                            <b></b> <span>LEARN MORE </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="page overlay" style="--bg:url('../imgs/covers/gallery.png')">
+                    <div class="hero">
+                        <h1 class="title" style="--clr:#af0"> Explore Our Gallery </h1>
+                        <h3 class="subtitle">A picture is worth a thousand words </h3>
+                        <p class="text">
+                            Pass through our progress and processes with pictures
+                        </p>
+                        <a href="components/pictureflow.html" class="button" style="--clr:#af0">
+                            <b></b> <span>LEARN MORE </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="page overlay" style="--bg:url('../imgs/covers/home.jpg')">
+                    <div class="hero">
+                        <h1 class="title" style="--clr:#c5f">MUAB COFFEE</h1>
+                        <h3 class="subtitle">The Ethiopian Coffee Standard. </h3>
+                        <p class="text">
+                            Ever since the first shepherd to test coffee, Ethiopia is regarded as both the origin and standard for Arabica coffee and MUAB Coffee is here representing the standard.
+                        </p>
+                        <a href="#about" class="button" style="--clr:#c5f">
+                            <b></b> <span>LEARN MORE </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a class="controls arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                    <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path
+                        d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z" />
+                </svg>
+            </a>
+        </div>
+
+        <!--==========About============--->
+        <div id="about" class="section about">
+            <div class="about__wrapper">
+                <h1 class="title pop">
+                    Who are we?
+                </h1>
+                <h3 class="title pop">
+                    Introducing MUAB Coffee.
+                </h3>
+                <div class="about__card">
+                    <div class="imgs__wrapper">
+                        <div class="imgs">
+                            <div class="bigs pop">
+                                <img src="./imgs/staff/abt.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desc__wrapper">
+                        <div class="desc">
+                            <p class="pop">
+                                MUAB coffee export plc was established on 2022 fulfilling all the necessary requirement aiming to export coffee from every corner of Ethiopia. Following our establishment, we are exporting green coffee form Guji and working our best to attain our aim.
+                            </p>
+                            <p class="pop">
+                                Growing a in family of business men and women, learning most hurdles beforehand, helped much in our success. We owe most of our success to our family, since the name MUAB.
+                            </p>
+                            <p class="pop">
+                                As a yang company, with full of energetic and dynamic team, we involve in every steps of processes to insure quality coffee production. Taking our experience form Guji and expanding our reach to other coffee producers in southern Ethiopia.
+                            </p>
+                        </div>
+
+                        <div class="imgs">
+                            <div class="smalls">
+                                <img class="pop" src="./imgs/logo4.png" alt="">
+                                <img class="pop" src="./imgs/logo2ECX-4-300x200.jpg" alt="">
+                                <img class="pop" src="./imgs/ecea-1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="./coffee/coffee9m.png" alt="" class="artifacts pop">
+            <img src="./imgs/coffee99.png" alt="" class="artifacts big pop">
+        </div>
+
+        <div class="section values">
+            <div class="values__wrapper">
+                <h2 class="title pop">
+                    Values
+                </h2>
+                <div class="values__list">
+                    <div class="column">
+                        <div class="item pop">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                <path
+                                    d="M0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256zM371.8 211.8C382.7 200.9 382.7 183.1 371.8 172.2C360.9 161.3 343.1 161.3 332.2 172.2L224 280.4L179.8 236.2C168.9 225.3 151.1 225.3 140.2 236.2C129.3 247.1 129.3 264.9 140.2 275.8L204.2 339.8C215.1 350.7 232.9 350.7 243.8 339.8L371.8 211.8z" />
+                            </svg>
+                            Integrity
+                        </div>
+                        <div class="item pop">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                <path
+                                    d="M0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256zM371.8 211.8C382.7 200.9 382.7 183.1 371.8 172.2C360.9 161.3 343.1 161.3 332.2 172.2L224 280.4L179.8 236.2C168.9 225.3 151.1 225.3 140.2 236.2C129.3 247.1 129.3 264.9 140.2 275.8L204.2 339.8C215.1 350.7 232.9 350.7 243.8 339.8L371.8 211.8z" />
+                            </svg>
+                            Customer Focused
+                        </div>
+                        <div class="item pop">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                <path
+                                    d="M0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256zM371.8 211.8C382.7 200.9 382.7 183.1 371.8 172.2C360.9 161.3 343.1 161.3 332.2 172.2L224 280.4L179.8 236.2C168.9 225.3 151.1 225.3 140.2 236.2C129.3 247.1 129.3 264.9 140.2 275.8L204.2 339.8C215.1 350.7 232.9 350.7 243.8 339.8L371.8 211.8z" />
+                            </svg>
+                            Quality and Safety
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="item pop">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                <path
+                                    d="M0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256zM371.8 211.8C382.7 200.9 382.7 183.1 371.8 172.2C360.9 161.3 343.1 161.3 332.2 172.2L224 280.4L179.8 236.2C168.9 225.3 151.1 225.3 140.2 236.2C129.3 247.1 129.3 264.9 140.2 275.8L204.2 339.8C215.1 350.7 232.9 350.7 243.8 339.8L371.8 211.8z" />
+                            </svg>
+                            Respect
+                        </div>
+                        <div class="item pop">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                <path
+                                    d="M0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256zM371.8 211.8C382.7 200.9 382.7 183.1 371.8 172.2C360.9 161.3 343.1 161.3 332.2 172.2L224 280.4L179.8 236.2C168.9 225.3 151.1 225.3 140.2 236.2C129.3 247.1 129.3 264.9 140.2 275.8L204.2 339.8C215.1 350.7 232.9 350.7 243.8 339.8L371.8 211.8z" />
+                            </svg>
+                            Team Work
+                        </div>
+                        <div class="item pop">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                <path
+                                    d="M0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256zM371.8 211.8C382.7 200.9 382.7 183.1 371.8 172.2C360.9 161.3 343.1 161.3 332.2 172.2L224 280.4L179.8 236.2C168.9 225.3 151.1 225.3 140.2 236.2C129.3 247.1 129.3 264.9 140.2 275.8L204.2 339.8C215.1 350.7 232.9 350.7 243.8 339.8L371.8 211.8z" />
+                            </svg>
+                            Continuous Improvement
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--==========Products============--->
+        <div id="products" class="section products">
+            <div class="products__wrapper">
+                <h1 class="title">
+                    What is Coffee for Ethiopia?
+                </h1>
+                <div class="mini__blog">
+                    <div class="top">
+                        <img class="pop" src="./imgs/coffee/et.jpg">
+                        <div class="blog">
+                            <p class="pop">
+                                Guji in particular and Ethiopia at large has a very vibrant culture and economy heavily intertwined with coffee. Coffee in Ethiopia is not just a drink; it is also a ceremony that shaped the social fabric. Everywhere in Ethiopian neighbors gather for coffee ceremony at least once in a day. Arbitration between disputed, expectance sharing between elderly and untutored, or just a causal meeting can’t go without coffee.
+                            </p>
+                            <p class="pop">
+                                In most countries only beans of the coffee is consumed but in some part of Ethiopia even the leaves of coffee is also brewed and specially in Guji(Southern Oromia), the most cultural extravaganza of coffee, the coffee beans are consumed by mixing roasted coffee beans with butter without boiling and it’s called Bunakala.
+                            </p>
+                        </div>
+                    </div>
+                    <img class="pop" src="./imgs/coffee/bunakela.jpg">
+                </div>
+            </div>
+        </div>
+
+        <div class="section products">
+            <div class="products__wrapper">
+                <h1 class="title">
+                    What Do We Offer?
+                </h1>
+                <h3>Guji Specialty Coffee, These are the General Characteristics</h3>
+                <div class="lists">
+                    <!-- <h3 class="title">Specialty, Guji Grad 1</h3> -->
+                    <div class="column">
+                        <div class="item fromLeft">
+                            <span class="subtitle">Origin</span>
+                            <span class="desc">Ethiopia, Guji</span>
+                        </div>
+                        <div class="item fromRight">
+                            <span class="subtitle">Varietal</span>
+                            <span class="desc">Welichu, Kudhumi</span>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="item fromLeft">
+                            <span class="subtitle">Processing</span>
+                            <span class="desc">Natural</span>
+                        </div>
+                        <div class="item fromRight">
+                            <span class="subtitle">Testing Notes</span>
+                            <span class="desc">Black cherry, milk chocolate, mango, resehip floral, pecan nuts.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section products">
+            <div class="products__wrapper">      
+                <h3 class="title">Products List</h3>
+                <div class="product__list">
+                    <div class="column">
+                        <div class="card pop fromLeft">
+                            <h3 class="title">Guji Unwashed<sup>G1</sup></h3>
+                            <img src="./imgs/coffee/coffee04.jpg">
+                            <div class="item">
+                                <span class="subtitle">Origin</span>
+                                <span class="desc">Ethiopia, Guji</span>
+                            </div>
+                            <div class="item">
+                                <span class="subtitle">Processing</span>
+                                <span class="desc">Natural</span>
+                            </div>
+                            <div class="item">
+                                <span class="subtitle">Altitude </span>
+                                <span class="desc">1700-2200<sub>Above Sea Level</sub></span>
+                            </div>
+                        </div>
+
+                        <div class="card pop fromRight">
+                            <h3 class="title">Adola washed<sup>G2</sup></h3>
+                            <img src="./imgs/coffee/coffee01.jpg">
+                            <div class="item">
+                                <span class="subtitle">Origin</span>
+                                <span class="desc">Ethiopia, Guji</span>
+                            </div>
+                            <div class="item">
+                                <span class="subtitle">Processing</span>
+                                <span class="desc">Natural</span>
+                            </div>
+                            <div class="item">
+                                <span class="subtitle">Altitude </span>
+                                <span class="desc">1700-2200<sub>Above Sea Level</sub></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card pop fromLeft">
+                            <h3 class="title">KILLENSO WASHED<sup>G2</sup></h3>
+                            <img src="./imgs/coffee/coffee04.jpg">
+                            <div class="item">
+                                <span class="subtitle">Origin</span>
+                                <span class="desc">Ethiopia, Guji</span>
+                            </div>
+                            <div class="item">
+                                <span class="subtitle">Processing</span>
+                                <span class="desc">Natural</span>
+                            </div>
+                            <div class="item">
+                                <span class="subtitle">Altitude </span>
+                                <span class="desc">1700-1900<sub>Above Sea Level</sub></span>
+                            </div>
+                        </div>
+
+                        <div class="card pop fromRight">
+                            <h3 class="title">SHARO WASHED<sup>G2</sup></h3>
+                            <img src="./imgs/coffee/coffee02.jpg">
+                            <div class="item">
+                                <span class="subtitle">Origin</span>
+                                <span class="desc">Ethiopia, Guji</span>
+                            </div>
+                            <div class="item">
+                                <span class="subtitle">Processing</span>
+                                <span class="desc">Natural</span>
+                            </div>
+                            <div class="item">
+                                <span class="subtitle">Altitude </span>
+                                <span class="desc">1800-2100<sub>Above Sea Level</sub></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--==========team============--->
+        <div id="team" class="section team">
+            <div class="about__wrapper">
+                <h1 class="title">
+                    Our team
+                </h1>
+                <h3 class="title">
+                    Meat our staff.
+                </h3>
+
+                <div class="staff">
+                    <div class="big">
+                        <div class="people pop">
+                            <img src="./imgs/staff/gm.png" alt="">
+                            <div class="desc">
+                                <span class="name">Hailesemayat Mulugeta</span>
+                                <span class="position">General Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small">
+                        <div class="people pop delay2">
+                            <img src="./imgs/staff/gm.png" alt="">
+                            <div class="desc">
+                                <span class="name">Hailesemayat Mulugeta</span>
+                                <span class="position">General Manager</span>
+                            </div>
+                        </div>
+                        <div class="people pop delay2">
+                            <img src="./imgs/staff/gm.png" alt="">
+                            <div class="desc">
+                                <span class="name">Hailesemayat Mulugeta</span>
+                                <span class="position">Human Resource Director</span>
+                            </div>
+                        </div>
+                        <div class="people pop delay3">
+                            <img src="./imgs/staff/gm.png" alt="">
+                            <div class="desc">
+                                <span class="name">Hailesemayat Mulugeta</span>
+                                <span class="position">Export Operation Manager</span>
+                            </div>
+                        </div>
+                        <div class="people pop delay3">
+                            <img src="./imgs/staff/gm.png" alt="">
+                            <div class="desc">
+                                <span class="name">Hailesemayat Mulugeta</span>
+                                <span class="position">Accounting and Finance Director</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!----=========testimonials=========-->
+        <div class="section testimonials">
+            <div class="testimonials__wrapper delay1">
+                <h1 class="title pop">
+                    What People are saying?
+                </h1>
+                <h3 class="title pop">
+                    Here are some testimonies
+                </h3>
+
+                <div class="testimonial pop fromLeft">
+                    <img class="avatar" src="./imgs/staff/gm.png" alt="">
+                    <div class="testimony">
+                        <div class="testimony__title">
+                            <h3>Nina</h3>
+                            <span>Jun 6<sup>th</sup></span>
+                        </div>
+                        <p>Working with MUAB Coffee is the best experience I had since forever. Good Job guys.</p>
+                        <span class="desc">Customer Russia</span>
+                    </div>
+                </div>
+
+                <div class="testimonial pop fromRight">
+                    <img class="avatar" src="./imgs/staff/gm.png" alt="">
+                    <div class="testimony">
+                        <div class="testimony__title">
+                            <h3>Israel</h3>
+                            <span>Jun 6<sup>th</sup></span>
+                        </div>
+                        <p>Your website is very informative and I have found what I wanted.</p>
+                        <span class="desc">Customer from US.</span>
+                    </div>
+                </div>
+
+                <div class="testimonial pop fromLeft">
+                    <img class="avatar" src="./imgs/staff/gm.png" alt="">
+                    <div class="testimony">
+                        <div class="testimony__title">
+                            <h3>Mulugeta</h3>
+                            <span>Jun 6<sup>th</sup></span>
+                        </div>
+                        <p>
+                            You have grown our family business to the level it should have been so long ago. I believe you would achieve your goals in no time. Could never be so proud. 
+                        </p>
+                        <span class="desc">Partner form Ethiopia</span>
+                    </div>
+                </div>
+
+                <div class="testimonial pop fromRight">
+                    <img class="avatar" src="./imgs/staff/gm.png" alt="">
+                    <div class="testimony">
+                        <div class="testimony__title">
+                            <h3>Morkota</h3>
+                            <span>Jun 6<sup>th</sup></span>
+                        </div>
+                        <p>
+                            I am glad to see my former partner and friend to get this far. I look forward to work together toward our goal.
+                        </p>
+                        <span class="desc">customer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--==========Footer============--->
+        <footer id="contact" class="footer section container">
+            <div class="footer__wrapper">
+
+                <div class="footer__content contact">
+                    <img src="coffee/logo.png" alt="">
+                    <div class="subscribe pop">
+                        <span class="description pop">Subscribe to our newsletter</span>
+                        <div class="form pop">
+                            <input type="email" name="email" id="sub_email" placeholder="your email address">
+                            <a class="button" style="clr:#f00"></a>
+                        </div>
+                    </div>
+                    <span class="desc pop">Keep Updated by Following Our Feeds</span>
+                    <div class="social pop">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path
+                                    d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                <path
+                                    d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z" />
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                <path
+                                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer__content ">
+                    <div class="address  pop">
+                        <span class="title">Contact Us</span>
+                        <span class="subtitle">Location</span>
+                        <div class="info pop">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                <path
+                                    d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z" />
+                            </svg>
+                            <div class="infos pop">
+                                <span class="description">Near .....</span>
+                                <span class="description">Shakiso, Ethiopia</span>
+                            </div>
+                        </div>
+                        <div class="info pop">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                <path
+                                    d="M511.2 387l-23.25 100.8c-3.266 14.25-15.79 24.22-30.46 24.22C205.2 512 0 306.8 0 54.5c0-14.66 9.969-27.2 24.22-30.45l100.8-23.25C139.7-2.602 154.7 5.018 160.8 18.92l46.52 108.5c5.438 12.78 1.77 27.67-8.98 36.45L144.5 207.1c33.98 69.22 90.26 125.5 159.5 159.5l44.08-53.8c8.688-10.78 23.69-14.51 36.47-8.975l108.5 46.51C506.1 357.2 514.6 372.4 511.2 387z" />
+                            </svg>
+                            <div class="infos">
+                                <span class="description">+251 9 323 32 23</span>
+                                <span class="description">+251 9 122 12 12</span>
+                            </div>
+                        </div>
+                        <span class="subtitle pop">Email</span>
+                        <div class="info">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                <path
+                                    d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z" />
+                            </svg>
+                            <div class="infos pop">
+                                <span class="description">haile@muab.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copy__right ">
+                <span>MUAbCoffee Copy right (C)</span>
+                <a class="description">MW</a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+
+
+
+<!-- pager -->
+<script>
+    const pagerWrap = document.querySelectorAll(".pager");
+    const pages = document.querySelectorAll(".pages");
+    const arrow = document.querySelectorAll('.arrow')
+    // console.log(pages)
+    pagerWrap.forEach((ele, i) => {
+        // console.log(ele.attributes.getNamedItem("index").value);
+        let pageList = ele.querySelectorAll('.page');
+        // console.log(pages)
+        pageList.forEach(page => {
+            // console.log(page);
+            page.style.left = "-500px"
+        });
+
+        // console.log(ele.attributes.getNamedItem("index"))
+        layout(i);
+    })
+
+    let loop = true;
+    arrow.forEach((ele, i) => {
+        ele.addEventListener("click", (event) => {
+            next(i);
+        })
+    });
+
+    function next(i){
+        let currentIndex = Number.parseInt(pagerWrap[i].attributes.getNamedItem("index").value);
+            let pagesList = pages[i].querySelectorAll(".page");
+            if (currentIndex < pagesList.length - 2) {
+                pages[i].style.transition = "1s"
+                pagerWrap[i].attributes.getNamedItem("index").value = currentIndex + 1;
+            } else if (loop && currentIndex == pagesList.length - 2) {
+                // console.log("last one")
+                pages[i].style.transition = "1s"
+                pagerWrap[i].attributes.getNamedItem("index").value = currentIndex + 1;
+                setTimeout(() => {
+                    // console.log("end of animation")
+                    pages[i].style.transition = "0s"
+                    pagerWrap[i].attributes.getNamedItem("index").value = 0;
+                    layout(i)
+                }, 1000);
+            } else {
+                // console.log("going back")
+                pages[i].style.transition = "0s"
+                pagerWrap[i].attributes.getNamedItem("index").value = 0;
+            }
+            layout(i)
+    }
+
+    setInterval(() => {
+        next(0);
+    }, 5000);
+
+    function layout(i) {
+        let pageList = pages[i].querySelectorAll(".page");
+        let width = pagerWrap[i].clientWidth;
+        let height = pagerWrap[i].cliantHeight;
+        let index = Number.parseInt(pagerWrap[i].attributes.getNamedItem("index").value)
+
+        width = 100;
+        pageList.forEach((page, i) => {
+            page.style.left = `${(i)*width}%`
+            // page.style.width = `${width}px`;
+        })
+        pages[i].style.left = `${(-index)*width}%`;
+        // pages[i].style.width = `${(pages.length*width)}px`;
+    }
+</script>
+
+
+<!-- nav -->
+<script>
+    const parent = document.getElementById("parent");
+    const navList = document.getElementById("nav");
+    const navLists = document.querySelectorAll('.nav__link')
+    const navToggle = document.getElementById("navToggle")
+    const header =  document.getElementById("header");
+    navToggle.addEventListener("click", (event)=>{
+        if(navList.classList.contains('active')){
+            navList.classList.remove('active')
+            if( parent.scrollTop <= 5){
+                header.classList.remove("scrolled");
+            }else{
+                header.classList.add("scrolled");
+            }
+        }else{
+            navList.classList.add('active');
+            header.classList.add("scrolled");
+        }
+    })
+
+    parent.addEventListener("scroll", (event) => {
+        // console.log(parent.scrollTop)
+        if(parent.scrollTop > 5){
+           header.classList.add("scrolled");
+        }else{
+            if(!nav.classList.contains('active')){
+                header.classList.remove("scrolled")
+            }
+        }
+    })
+
+    navLists.forEach(nav => {
+        nav.addEventListener('click', (event) =>{
+            navLists.forEach(ele =>{
+                ele.classList.remove('selected');
+            });
+            nav.classList.add("selected")
+
+            navList.classList.remove('active')
+            if( parent.scrollTop <= 5){
+                header.classList.remove("scrolled");
+            }else{
+                header.classList.add("scrolled");
+            }
+        })
+    });
+
+</script>
+
+
+
+<!-- scroll effects -->
+<script>
+
+    // parent = document.getElementById("parent");
+    // const parent = document;
+    const sections = document.querySelectorAll(".section");
+    // alert(parent)
+    // for(let i=0; i<sections.length; i++){
+    //     const ele = sections[i];
+    //     console.log(ele)
+    // }
+    
+    scrolll(parent, ".pop", "inView")
+    scrolll(parent, ".fromLeft", "inView")
+    scrolll(parent, ".fromRight", "inView")
+    scrolll(parent, ".section", "inside");
+
+    function scrolll(parent, selector, toggleClass){
+        //inside window
+        const items = document.querySelectorAll(selector);
+        function insideWindow(token) {
+            let rect = parent.getBoundingClientRect();
+            let scrollY = parent.scrollTop;
+            // rect.height -= 200;
+            // rect.y = scrollY + 100;
+            for (let i = 0; i < items.length; i++) {
+                let item = items[i];
+                let tempRect = item.getBoundingClientRect()
+                // tempRect.y += scrollY;
+                if (
+                    (tempRect.y + tempRect.height < rect.y) || (tempRect.y > rect.y + rect.height)
+                ) {
+                    if (item.classList.contains(token)) {
+                        item.classList.remove(token)
+                    }
+                } else {
+                    if (!item.classList.contains(token)) {
+                        item.classList.add(token)
+                    }
+                }
+            }
+        }
+    
+        let inside = toggleClass;
+        parent.addEventListener("scroll", (event) => {
+            insideWindow(inside);
+        })
+
+        insideWindow(inside);
+    }
+
+
+
+</script>
+
+<script>
+    function switchClass(query, className){
+        let item = document.querySelector(query);
+        if(item.classList.contains(className)){
+            item.classList.remove(className)
+        }else{
+            item.classList.add(className)
+        }
+    }
+</script>
+
+
+</html>

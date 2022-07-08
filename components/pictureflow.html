@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: Roboto, 'Segoe UI', Tahoma, sans-serif;
+        }
+
+        a.home{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            color:rgb(101, 155, 155);
+            font-size: 17px;
+            margin: 0 5px 0 5px;
+        }
+
+        .coverflow__items {
+            border: 1px solid rgb(29, 15, 15);
+            border-radius: 5px;
+            width: 100px;
+            background-color: #534;
+            object-fit: cover;
+        }
+
+        .control {
+            position: absolute;
+            right: 0;
+            width: 30px;
+            object-fit: scale-down;
+            padding: 0.5%;
+            padding-right: 2%;
+            background: linear-gradient(90deg, #666 30%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        .control__right {
+            right: 0;
+            transform: rotate(180deg);
+        }
+
+        .control__back {
+            left: 0;
+        }
+
+        .control:hover {
+            opacity: 1;
+        }
+
+        .coverflow {
+            display: flex;
+            position: relative;
+            align-items: center;
+            align-self: center;
+            overflow: hidden;
+            transition: 1s;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(0deg, #aaa 50%, #333 100%);
+        }
+
+        .covers {
+            position: relative;
+            display: block;
+            float: left;
+            transition: 1s;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            background-color: rgb(29, 15, 15);
+        }
+
+        .view {
+            position: absolute;
+            width: 100%;
+            height: 85%;
+            background-color: rgb(29, 15, 15);
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            z-index: 100;
+            gap: 10px;
+            position: absolute;
+            top: 0;
+            padding: 19px;
+            height: 85px;
+            width: 100%;
+            background: linear-gradient(265deg, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.5) 100%);
+        }
+
+        .menu a {
+            height: 100%;
+            width: 100%;
+        }
+
+        .menu img {
+            height: 100%;
+        }
+
+        .disc {
+            font-family: Calibri, 'Trebuchet MS', sans-serif;
+            color: aliceblue;
+            position: absolute;
+            bottom: 15%;
+            height: auto;
+            padding: 0 25px 5px 15px;
+            width: 100%;
+            background: linear-gradient(185deg, rgba(0, 0, 0, 0) 50%, rgba(104, 104, 104, 0.3) 100%);
+        }
+
+        .disc .main {
+            display: block;
+            position: relative;
+            opacity: 0.0;
+            top: 60px;
+            transition: .6s;
+            color: #fff;
+            margin-bottom: 3px;
+        }
+
+        .disc .sub {
+            display: block;
+            position: relative;
+            opacity: 0.0;
+            top: 75px;
+            transition: .8s;
+            color: #ccc;
+            margin-bottom: 5px;
+        }
+
+        .disc .text {
+            display: block;
+            position: relative;
+            opacity: 0.0;
+            top: 80px;
+            transition: 1s;
+            color: #aaa;
+        }
+
+        .disc .vis {
+            background-color: transparent;
+            position: relative;
+            opacity: 1;
+            top: 0;
+            text-shadow: 1px 1px 5px #000;
+        }
+
+
+        .picture__flow {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            height: 15%;
+            background-color: #534;
+        }
+
+        .image {
+            transition: 1s;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            box-shadow: 3, 0, 4, rgba(0, 0, 0, 0.5);
+        }
+
+        .cover {
+            transition: 1s;
+            position: absolute;
+            opacity: 0.4;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(10px);
+        }
+    </style>
+
+    <div class="container">
+        <div class="menu">
+            <a href="../index.html" class="home link">
+                <img src="../coffee/logo.png" alt="">
+            </a>
+        </div>
+        <div class="view">
+            <img class="cover" src="" alt="" id="cover">
+            <img class="image" src="" alt="" id="image">
+        </div>
+
+        <div class="disc">
+            <h1 class="dsc main"></h1>
+            <h2 class="dsc sub"></h2>
+            <h4 class="dsc text"></h4>
+        </div>
+
+        <div class="picture__flow">
+            <div class="coverflow" id="list">
+
+            </div>
+            <div class="lagend">
+
+            </div>
+            <div class="progress">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const cover = document.getElementById("cover")
+        const view = document.getElementById("image")
+        const list = document.getElementById("list")
+        const covers = document.createElement("div")
+        covers.className = "covers";
+        const next = document.createElement("img")
+        next.className = "control control__right"
+        next.src = `../imgs/arrow_left.png`
+        const back = document.createElement("svg")
+        back.className = "control control__back"
+        back.src = `../imgs/arrow_left.png`
+        
+
+        let data = {
+            imgs : [{
+                src : "../imgs/gallery/gallery01.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            },{
+                src : "../imgs/gallery/gallery02.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            },{
+                src : "../imgs/gallery/gallery03.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            },{
+                src : "../imgs/gallery/gallery04.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            },{
+                src : "../imgs/gallery/gallery05.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            },{
+                src : "../imgs/gallery/gallery06.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            },{
+                src : "../imgs/gallery/gallery07.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            },{
+                src : "../imgs/gallery/gallery08.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            },{
+                src : "../imgs/gallery/gallery09.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            },{
+                src : "../imgs/gallery/gallery10.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            },{
+                src : "../imgs/gallery/gallery11.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            },{
+                src : "../imgs/gallery/gallery12.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            },{
+                src : "../imgs/gallery/gallery13.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            },{
+                src : "../imgs/gallery/gallery14.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            },{
+                src : "../imgs/gallery/gallery15.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            },{
+                src : "../imgs/gallery/gallery16.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            },{
+                src : "../imgs/gallery/gallery17.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            },{
+                src : "../imgs/gallery/gallery18.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            },{
+                src : "../imgs/gallery/gallery19.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            },{
+                src : "../imgs/gallery/gallery20.jpg",
+                title: "Coffee Site At Gerba",
+                subTitle: "Celebrating Birthday on Work",
+                text: "January 11 2021"
+            }
+        ]}
+
+        data.imgs.forEach(el => {
+            console.log(el)
+            let pic = document.createElement("img")
+            pic.src = el.src;
+            pic.className = "coverflow__items"
+            covers.appendChild(pic);
+        });
+
+        list.children = {};
+        list.appendChild(covers);
+        list.appendChild(next);
+        list.appendChild(back);
+        let children = covers.children;
+
+        for (let i = 0; i < children.length; i++) {
+            children[i].addEventListener("click", () => {
+                setIndex(i);
+            })
+        }
+
+
+        //layout
+        let index = 2;
+        setIndex(0);
+        // let first = true;
+        document.addEventListener("resize", () => {
+            console.log("wat")
+            layout(index);
+        });
+
+        next.addEventListener("click", () => {
+            index = index < children.length - 1 ? index + 1 : 0;
+            setIndex(index);
+        })
+
+        back.addEventListener("click", () => {
+            index = index > 0 ? index - 1 : children.length - 1;
+            setIndex(index);
+        })
+
+        function setIndex(i) {
+            index = i;
+            layout(i);
+            view.src = children[i].src;
+            cover.src = children[i].src;
+
+            hideDesc()
+            showDesc(data.imgs[i].title, data.imgs[i].subTitle, data.imgs[i].text);
+        }
+
+        function showDesc(title, subTitle, text) {
+            let step = 0;
+            setTimeout(() => {
+                let desc = document.getElementsByClassName("dsc");
+                for (let i = 0; i < desc.length; i++) {
+                    let ele = desc[i];
+                    switch (i) {
+                        case 0:
+                            ele.innerHTML = title
+                            break;
+                        case 1:
+                            ele.innerHTML = subTitle;
+                            break;
+                        case 2:
+                            ele.innerHTML = text;
+                        default:
+                            break;
+                    }
+                    ele.classList.add("vis");
+                }
+            }, 700);
+        }
+
+        function hideDesc() {
+            console.log("hide")
+            let desc = document.getElementsByClassName("dsc");
+            for (let i = 0; i < desc.length; i++) {
+                let ele = desc[i];
+                console.log(ele.classList)
+                ele.classList.remove("vis");
+            }
+            let step = 0;
+            setTimeout(() => {}, 0.2);
+        }
+
+        function layout(index) {
+            console.log(index)
+            let hlfCovers = 3;
+            const gap = 10;
+            let totalWidth = 0;
+            let contWidth = list.clientWidth;
+            let maxHeight = list.clientHeight * 0.93;
+            let minHeight = maxHeight * 0.7;
+            for (let i = 0; i < children.length; i++) {
+                let w = i === index ? maxHeight : Math.abs(index - i) < 2 ? (minHeight + maxHeight) * 0.5 : minHeight;
+                children[i].style =
+                    `position: absolute; transition: 0.5s; width: ${w}px; height: ${w}px; left: ${totalWidth}px; top: ${(maxHeight-w)*0.5}px`
+                totalWidth += w + gap;
+            }
+            // covers.style.left = ((totalWidth - index * (minHeight))) + "px"
+            covers.style.width = totalWidth + "px";
+            covers.style.height = maxHeight + "px"
+            next.style = `width: ${maxHeight/2}px; height: ${maxHeight*1.08}px`;
+            back.style = `width: ${maxHeight/2}px; height: ${maxHeight*1.08}px`;
+            covers.style.left = (contWidth * 0.5 - index * (minHeight + gap) - (maxHeight -
+                minHeight) * 1.75) + "px";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Flow</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .coverflow__items {
+            border: 1px solid rgb(29, 15, 15);
+            border-radius: 5px;
+            width: 100px;
+            background-color: #534;
+        }
+
+        .control {
+            position: absolute;
+            right: 0;
+            width: 30px;
+            object-fit: scale-down;
+            padding: 1%;
+            padding-right: 4%;
+            background: linear-gradient(90deg, #fff 50%, rgba(0,0,0,0) 100%);
+        }
+
+        .control__right {
+            right: 0;
+            transform: rotate(180deg);
+        }
+
+        .control__back {
+            left: 0;
+        }
+
+        .control:hover{
+            opacity: 1;
+        }
+
+        .coverflow {
+            display: flex;
+            position: relative;
+            align-items: center;
+            overflow: hidden;
+            transition: 1s;
+            height: 150px;
+            width: 100%;
+            background-color: aliceblue;
+            background: linear-gradient(#fff 50%, #ccc 100%);
+        }
+
+        .covers {
+            position: relative;
+            display: block;
+            float: left;
+            transition: 1s;
+        }
+    </style>
+
+    <div class="picture__flow container">
+        <div class="coverflow" id="list">
+
+        </div>
+        <div class="lagend">
+
+        </div>
+        <div class="progress">
+        </div>
+    </div>
+
+    <script>
+        const list = document.getElementById("list")
+        const covers = document.createElement("div");
+        covers.className = "covers";
+        const next = document.createElement("img")
+        next.className = "control control__right"
+        next.src = `../img/left-arrow-3.png`
+        const back = document.createElement("img")
+        back.className = "control control__back"
+        back.src = `../img/left-arrow-3.png`
+
+        for (let j = 0; j < 5; j++) {
+            for (let i = 1; i < 5; i++) {
+                let pic = document.createElement("img")
+                pic.src = `../img/cake${i}.png`
+                pic.className = "coverflow__items"
+                covers.appendChild(pic);
+            }
+        }
+
+
+        list.children = {};
+        list.appendChild(covers);
+        list.appendChild(next);
+        list.appendChild(back);
+        let children = covers.children;
+
+
+        //layout
+        let index = 2;
+        layout(index);
+        // let first = true;
+        list.addEventListener("resize", () => {
+            layout(index);
+        });
+
+        next.addEventListener("click", () => {
+            index = index < children.length - 1 ? index + 1 : 0;
+            layout(index);
+        })
+
+        back.addEventListener("click", () => {
+            index = index > 0 ? index - 1 : children.length - 1;
+            layout(index);
+        })
+
+        function layout(index) {
+            let listRect = list.getBoundingClientRect;
+            let hlfCovers = 3;
+            const gap = 10;
+            let totalWidth = 0;
+            let contWidth = list.clientWidth;
+            let maxHeight = list.clientHeight * 0.93;
+            let minHeight = maxHeight * 0.7;
+            for (let i = 0; i < children.length; i++) {
+                let w = i === index ? maxHeight : Math.abs(index - i) < 2 ? (minHeight + maxHeight) * 0.5 : minHeight;
+                children[i].style =
+                    `position: absolute; transition: 0.5s; width: ${w}px; height: ${w}px; left: ${totalWidth}px; top: ${(maxHeight-w)*0.5}px`
+                totalWidth += w + gap;
+            }
+            // covers.style.left = ((totalWidth - index * (minHeight))) + "px"
+            covers.style.width = totalWidth + "px";
+            covers.style.height = maxHeight + "px"
+            next.style = `width: ${maxHeight/2}px; height: ${maxHeight*1.08}px`;
+            back.style = `width: ${maxHeight/2}px; height: ${maxHeight*1.08}px`;
+            covers.style.left = (contWidth * 0.5 - index * (minHeight + gap) - (maxHeight -
+                minHeight) * 1.75) + "px";
+            console.log(list.clientWidth + "    " + totalWidth + "    " + children[index].computedStyleMap().get(
+                "left"))
+        }
+    </script>
+</body>
+
+</html>
