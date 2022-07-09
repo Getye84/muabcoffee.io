@@ -762,7 +762,7 @@ a.controls:hover {
     display: flex;
     flex:  1;
     width:  100%;
-    height:  auto;
+    height:  100hv;
     object-fit: cover;
 }
 
